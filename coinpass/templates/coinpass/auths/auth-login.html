@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Softnio" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers."
+    />
+
+    {% load static %}
+
+    <link rel="shortcut icon" href="{% static 'dashboard/images/favicon.ico' %}" />
+    <title>Login | Coinpass User</title>
+    <link rel="stylesheet" href="{% static 'dashboard/css/dashlite.css' %}" />
+    <link
+      id="skin-default"
+      rel="stylesheet"
+      href="{% static 'dashboard/css/theme.css' %}"
+    />
+    <script src="{% static 'dashboard/js/bundle.js' %}"></script>
+    <script src="{% static 'dashboard/js/scripts.js' %}"></script>
+    <script src="{% static 'dashboard/js/demo-settings.js' %}"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-91615293-4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-91615293-4");
+    </script>
+  </head>
+  <body class="nk-body dark-mode npc-default pg-auth">
+    <div class="nk-app-root">
+      <div class="nk-main">
+        <div class="nk-wrap nk-wrap-nosidebar">
+          <div class="nk-content">
+            <div class="nk-block nk-block-middle nk-auth-body wide-xs">
+              <div class="brand-logo pb-4 text-center">
+                <a href="{% url 'index' %}" class="logo-link">
+                  <img
+                    class="logo-light logo-img logo-img-lg"
+                    src="{% static 'dashboard/images/coinpass-logo-inverted_nopadding.png' %}"
+                    srcset="
+                      images/coinpass-logo-inverted_nopadding-p-500.png 2x
+                    "
+                    alt="logo-light"
+                  />
+                </a>
+              </div>
+              <div class="card">
+                <div class="card-inner card-inner-lg">
+                  <div class="nk-block-head">
+                    <div class="nk-block-head-content">
+                      <h4 class="nk-block-title">Sign-In</h4>
+                      <div class="nk-block-des">
+                        <p>
+                          Access Your Coinpass Investment Platform Dashboard.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <form
+                    action=""
+                    class="form-validate is-alter"
+                    autocomplete="off"
+                    method="post"
+                  >
+                    {% csrf_token %}
+
+                    <div
+                      class="form-group {% if user_reg.email.errors %}has-warning has-feedback{% endif %}"
+                    >
+                      <div class="form-label-group">
+                        <label
+                          class="form-label"
+                          for="{{ user_reg.email.id_for_label }}"
+                        >
+                          Email
+                        </label>
+                      </div>
+                      <div class="form-control-wrap">
+                        {{ user_reg.email }}
+                        <!-- <input
+                          autocomplete="off"
+                          type="text"
+                          class="form-control form-control-lg"
+                          required
+                          id="email-address"
+                          placeholder="Enter your email address or username"
+                        /> -->
+                      </div>
+
+                      <!-- if our form has errors on email -->
+
+                      {% if errors %}
+                      <div style="color: red">
+                        {% for key, error in errors %} 
+                          {% autoescape off %} 
+                            {{ error }} 
+                          {% endautoescape %} 
+                        {% endfor %}
+                      </div>
+                      {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                      <div class="form-label-group">
+                        <label
+                          class="form-label"
+                          for="{{ user_log.password.id_for_label }}"
+                        >
+                          Password
+                        </label>
+                        <a
+                          class="link link-primary link-sm"
+                          tabindex="-1"
+                          href="{% url 'coinpass:f_password' %}"
+                        >
+                          Forgot Code?
+                        </a>
+                      </div>
+                      <div class="form-control-wrap">
+                        <a
+                          tabindex="-1"
+                          href="#"
+                          class="form-icon form-icon-right passcode-switch lg"
+                          data-target="password"
+                        >
+                          <em
+                            class="passcode-icon icon-show icon ni ni-eye"
+                          ></em>
+                          <em
+                            class="passcode-icon icon-hide icon ni ni-eye-off"
+                          ></em>
+                        </a>
+
+                        {{ user_log.password }}
+                        
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <button class="btn btn-lg btn-primary btn-block">
+                        Sign in
+                      </button>
+                    </div>
+                  </form>
+                  <div class="form-note-s2 pt-4">
+                    New on our platform?
+                    <a href="{% url 'coinpass:register' %}">
+                      Create an account
+                    </a>
+                  </div>
+                  <div class="text-center pt-4 pb-3">
+                    <h6 class="overline-title overline-title-sap">
+                      <span>OR</span>
+                    </h6>
+                  </div>
+                  <ul class="nav justify-center gx-4">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"> Facebook </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"> Google </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="nk-block nk-auth-footer">
+              <div class="nk-block-between">
+                <ul class="nav nav-sm">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Terms & Condition</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Privacy Policy</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Help</a>
+                  </li>
+                  <li class="nav-item dropup">
+                    <a
+                      class="dropdown-toggle dropdown-indicator has-indicator nav-link"
+                      data-toggle="dropdown"
+                      data-offset="0,10"
+                      ><small>English</small></a
+                    >
+                    <div
+                      class="dropdown-menu dropdown-menu-sm dropdown-menu-right"
+                    >
+                      <ul class="language-list">
+                        <li>
+                          <a href="#" class="language-item"
+                            ><img
+                              src="{% static 'dashboard/images/flags/english.png' %}"
+                              alt=""
+                              class="language-flag"
+                            /><span class="language-name">English</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="language-item"
+                            ><img
+                              src="{% static 'dashboard/images/flags/spanish.png' %}"
+                              alt=""
+                              class="language-flag"
+                            /><span class="language-name">Español</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="language-item"
+                            ><img
+                              src="{% static 'dashboard/images/flags/french.png' %}"
+                              alt=""
+                              class="language-flag"
+                            /><span class="language-name">Français</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="language-item"
+                            ><img
+                              src="{% static 'dashboard/images/flags/turkey.png' %}"
+                              alt=""
+                              class="language-flag"
+                            /><span class="language-name">Türkçe</span></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-3">
+                <p>&copy; 2022 Coinpass. All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+{% extends 'coinpass/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div>
+  <div class="max-width flex-section">
+    <div class="container">
+      <div class="col-lg-3 col-md-2 col-sm-2"></div>
+      <div class="text-centertext-muted section-title text-center with-desc clearfix">
+        <div class="title-header">
+          <h5>Welcome to CoinPass</h5>
+          <h2 class="title text-wrap">Making mining accessible to everyone</h2>
+        </div>       
+      </div>      
+    </div>
+  </div>
+  <div class="page-hero-bg"></div>
+</div>
+
+<div>
+  <section class="ttm-row pricing-plan-section clearfix" id="pricing">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-2"></div>
+        <div class="col-md-6 col-sm-8">
+          <div class="section-title text-center with-desc clearfix">
+            <div class="title-header">
+              <h2 class="title">INVESTTING PLANS</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-2"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="ttm-pricing-plan box-shadow text-center clearfix">
+            <div class="ttm-ptablebox-title"><h3>BRONZE PLAN:</h3></div>
+              <div class="ttm-ptablebox-desc">*rates are subject to change</div>
+                <div class="ttm-ptablebox-content">
+                  <div class="ttm-ptablebox-price-w">
+                    <div class="ttm-ptablebox-cur-symbol-before"></div>
+                      <div class="ttm-ptablebox-price">6%</div>
+                        <p>after 05 Days</p>
+                      </div>
+                      <div class="ttm-ptablebox-features">
+                        <ul class="ttm-feature-lines">
+                          <li>Min USD50 / Max USD 499</li>
+                          <li>Instant Withdrawal</li>
+                        </ul>
+                      </div>
+                </div>
+                <p>We Accept:</p>
+                <p>BITCOIN<br>
+                ETHERUM<br>
+                PERFECT MONEY</p>
+                <div class="price_btn">
+                  <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-bgcolor-darkgrey mb-20" href="{% url 'coinpass:login' %}">Invest</a>
+                </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ttm-pricing-plan box-shadow2 text-center clearfix">
+            <div class="ttm-ptablebox-title"><h3>SILVER PLAN:</h3></div>
+            <div class="ttm-ptablebox-desc">*rates are subject to change</div>
+              <div class="ttm-ptablebox-content">
+                <div class="ttm-ptablebox-price-w">
+                <div class="ttm-ptablebox-cur-symbol-before"></div>
+                <div class="ttm-ptablebox-price">10%</div>
+                  <p>after 05 Days</p>
+                </div>
+                <div class="ttm-ptablebox-features">
+                  <ul class="ttm-feature-lines">
+                    <li>Min USD500 / Max USD4999</li>
+                    <li>Instant Withdrawal</li>
+                  </ul>
+                </div>
+              </div>
+              <p>We Accept:</p>
+              <p>BITCOIN<br>
+              ETHERUM<br>
+              PERFECT MONEY</p>
+            <div class="price_btn">
+              <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-bgcolor-skincolor mb-20" href="login.html">Invest</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ttm-pricing-plan box-shadow text-center clearfix">
+            <div class="ttm-ptablebox-title"><h3>GOLD PLAN:</h3></div>
+            <div class="ttm-ptablebox-desc">*rates are subject to change</div>
+            <div class="ttm-ptablebox-content">
+              <div class="ttm-ptablebox-price-w">
+                <div class="ttm-ptablebox-cur-symbol-before"></div>
+                <div class="ttm-ptablebox-price">15%</div>
+                <p>after 05 Days</p>
+              </div>
+              <div class="ttm-ptablebox-features">
+                <ul class="ttm-feature-lines">
+                  <li>Min USD5000 / Max USD ~</li>
+                  <li>Instant Withdrawal</li>
+                </ul>
+              </div>
+            </div>
+            <p>We Accept:</p>
+            <p>BITCOIN<br>
+            ETHERUM<br>
+            PERFECT MONEY</p>
+            <div class="price_btn">
+              <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-bgcolor-darkgrey mb-20" href="login.html">Invest</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+</div>
+
+{% endblock %}
+
+        
+        <!--main start-->
+        

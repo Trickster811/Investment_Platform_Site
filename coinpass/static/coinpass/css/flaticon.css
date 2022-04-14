@@ -1,0 +1,72 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 25/05/2019 05:36
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon.eot");
+  src: url("../fonts/Flaticond41d.eot?") format("embedded-opentype"),
+       url("../fonts/Flaticon.woff2") format("woff2"),
+       url("../fonts/Flaticon.woff") format("woff"),
+       url("../fonts/Flaticon.ttf") format("truetype"),
+       url("../fonts/Flaticon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.svg") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+  font-size: inherit;
+  font-style: normal;
+}
+
+
+.flaticon-idea:before { content: "\f100"; }
+.flaticon-salary:before { content: "\f101"; }
+.flaticon-crowfunding:before { content: "\f102"; }
+.flaticon-cash:before { content: "\f103"; }
+.flaticon-consultation:before { content: "\f104"; }
+.flaticon-customer-service:before { content: "\f105"; }
+.flaticon-customer-service-1:before { content: "\f106"; }
+.flaticon-consult:before { content: "\f107"; }
+.flaticon-avatar:before { content: "\f108"; }
+.flaticon-cooperation:before { content: "\f109"; }
+.flaticon-consulting:before { content: "\f10a"; }
+.flaticon-consultant:before { content: "\f10b"; }
+.flaticon-business:before { content: "\f10c"; }
+.flaticon-callcenter:before { content: "\f10d"; }
+.flaticon-consultation-1:before { content: "\f10e"; }
+.flaticon-consulting-1:before { content: "\f10f"; }
+.flaticon-consultant-1:before { content: "\f110"; }
+.flaticon-chat:before { content: "\f111"; }
+.flaticon-business-1:before { content: "\f112"; }
+.flaticon-talk:before { content: "\f113"; }
+.flaticon-bitcoin:before { content: "\f114"; }
+.flaticon-business-and-finance:before { content: "\f115"; }
+.flaticon-talk-1:before { content: "\f116"; }
+.flaticon-question:before { content: "\f117"; }
+.flaticon-business-and-finance-1:before { content: "\f118"; }
+.flaticon-branding:before { content: "\f119"; }
+.flaticon-idea-1:before { content: "\f11a"; }
+.flaticon-idea-2:before { content: "\f11b"; }
+.flaticon-target:before { content: "\f11c"; }
+.flaticon-social-media:before { content: "\f11d"; }
+.flaticon-viral-marketing:before { content: "\f11e"; }
+.flaticon-research:before { content: "\f11f"; }
+.flaticon-target-1:before { content: "\f120"; }
+.flaticon-marketing:before { content: "\f121"; }
+.flaticon-search:before { content: "\f122"; }
+.flaticon-blogger:before { content: "\f123"; }
+.flaticon-ceo:before { content: "\f124"; }
+.flaticon-growth:before { content: "\f125"; }
+.flaticon-document:before { content: "\f126"; }
+.flaticon-cup:before { content: "\f127"; }

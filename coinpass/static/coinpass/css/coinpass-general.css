@@ -1,0 +1,260 @@
+/* Carousel Padding */
+.bx-viewport {
+    height: auto !important;
+    overflow: visible !important;
+}
+/* Dropdown Background Blur */
+.desk-dp-container,
+.caret-background,
+.mob-dp {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+/* Remove Webflow Badge */
+.w-webflow-badge {
+    display: none !important;
+    visibility: hidden;
+}
+/* Custom Height for Mobile Dropdown for phones */
+@media screen and (max-width: 478px) {
+    .mob-dp {
+        height: calc(calc(var(--vh, 1vh) * 100) - 120px);
+    }
+}
+.sidebar {
+    height: calc(100vh - 70px);
+}
+/* Balance Text */
+.balance-text {
+    text-wrap: balance;
+}
+div.main-div-live-price {
+margin: 3rem 0 3rem 0;
+/* padding-top: 3rem; */
+background-color: white;
+}
+div.main-div-live-price h1 {
+font-size: 1.75rem;
+color: hsl(223, 3%, 50%);
+}
+div.main-div-live-price .row{
+margin: 0 !important; 
+}
+div.main-div-live-price-col .coins-data {
+padding: 0 10px;
+}
+div.main-div-live-price-col .graph-col .subhead {
+padding: 10px 0 10px 20px;
+}
+div.main-div-live-price-col .is--row-button {
+padding: 5px 20px;
+font-size: 16px;
+}
+div.main-div-live-price-col div.row-loading {
+padding: 5rem;
+text-align: center;
+}
+div.main-div-live-price span.asset-span,
+div.main-div-live-price span.price-span {
+font-size: 1.3rem;
+}
+div.main-div-live-price div.header-label-div {
+display: flex;
+align-items: center;
+padding-bottom: 20px;
+border-bottom: solid hsl(217, 4%, 62%) 1px;
+color: hsl(230, 3%, 46%);
+font-weight: bold;
+}
+div.main-div-live-price div.content-div {
+/* display: flex; */
+text-align: left;
+margin-top: 2.5%;
+color: hsl(223, 3%, 50%);
+}
+div.price-feed-coin-div-live {
+margin: 0.3rem;
+max-height: 5rem;
+/* background: linear-gradient(217deg, #eeeeee, rgba(255, 255, 255, 0.993) 70.71%); */
+}
+td.price-feed-coin-td {
+/* margin: 0.5rem; */
+/* background: linear-gradient(217deg, #eeeeee, rgba(255, 255, 255, 0.993) 70.71%); */
+max-width: 8rem;
+}
+div.price-feed-coin-div-live div.coin-name {
+background-color: #eeeeee;
+margin: 0.25rem 0;
+padding: 0.5rem;
+}
+div.price-feed-coin-div-live span {
+color: darkgray;
+font-size: 1.3rem;
+}
+div.price-feed-coin-div-live canvas {
+padding: 0.5rem;
+max-height: 60px;
+width: 160px
+}
+div.main-div-live-price i.fa-green,
+div.main-div-live-price span.fa-green {
+color: rgb(5, 184, 5);
+}
+div.main-div-live-price i.fa-red,
+div.main-div-live-price span.fa-red {
+color: red;
+}
+div.main-div-live-price i.fa-green,
+div.main-div-live-price i.fa-red {
+font-size: 20px;
+}
+.change {
+padding-left: 48px;
+}
+@media only screen and (max-width: 600px) {
+.row.price-feed-live-header-div {
+display: none;
+}
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+div.main-div-live-price div.content-div {
+text-align: center;
+}
+div.price-feed-live-header-div {
+display: none;
+}
+}
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+div.main-div-live-price div.content-div {
+text-align: center;
+}
+div.price-feed-live-header-div {
+display: none;
+}
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+div.main-div-live-price div.content-div {
+text-align: center;
+}
+div.price-feed-live-header-div {
+display: none;
+}
+}
+div.about-container,
+div.fees-container,
+div.cookie-container {
+margin-top: 2%;
+padding: 2% 0;
+}
+div.about-container h5 {
+font-weight: bolder;
+}
+div.fees-container h5 {
+font-weight: bolder;
+}
+div.cookie-container h5 {
+font-weight: bolder;
+}
+div.about-container p {
+font-size: 1.1rem;
+}
+div.fees-container p {
+font-size: 1.1rem;
+}
+div.cookie-container p {
+font-size: 1.1rem;
+}
+div.about-container .header-container,
+div.fees-container .header-container,
+div.cookie-container .header-container {
+margin: 40px 0px;
+}
+div.fees-container table th {
+font-size: 1rem;
+}
+div.fees-container table tr td {
+border: 1px solid #dee2e6;
+}
+div.fees-container div.deposit-div,
+div.fees-container div.withdrawal-fee-div {
+margin: 40px 0;
+}
+div.about-container img.arrow-back,
+div.fees-container img.arrow-back,
+div.cookie-container img.arrow-back {
+-webkit-transform: scaleX(-1);
+transform: scaleX(-1);
+max-width: 70px;
+}
+div.about-container img.scroll-top,
+div.fees-container img.scroll-top,
+div.cookie-container img.scroll-top {
+-webkit-transform: rotate(-90deg);
+-moz-transform: rotate(-90deg);
+-ms-transform: rotate(-90deg);
+-o-transform: rotate(-90deg);
+transform: rotate(-90deg);
+max-width: 70px;
+}
+div.about-container img.scroll-top,
+div.fees-container img.scroll-top,
+div.cookie-container img.scroll-top {
+display: inline-block;
+text-align: center;
+border-radius: 4px;
+position: fixed;
+right: 30px;
+bottom: 60px;
+transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+opacity: 0;
+visibility: hidden;
+z-index: 1000;
+}
+div.about-container img.scroll-top.show,
+div.fees-container img.scroll-top.show,
+div.cookie-container img.scroll-top.show {
+opacity: 1;
+visibility: visible;
+}
+div.container div.back-container {
+margin: 4% 0 0;
+}
+.container.bg-white {
+background-color: white;
+}
+.container .banner .col-md-3 {
+padding: 0 30px;
+}
+.container .banner .col-md-9 h2 {
+font-size: 1.9rem;
+}
+.container .banner .mt-5 {
+margin-top: 100px !important;
+}
+.container .banner .col-md-6 .row .col-md-10 h4 {
+font-weight: 600;
+}
+.container .banner .img-banner {
+position: relative;
+height: auto;
+}
+.img-responsive.icon {
+width: 25%;
+height: auto;
+margin-bottom: 10px;
+}
+@media (min-width: 720px) {
+.container .banner .img-banner.mobile {
+    position: absolute;
+    left: 0;
+    width: 95%;
+}
+.img-responsive.icon {
+    width: 100% !important;
+}
+}
+@media (min-width: 992px) {
+}

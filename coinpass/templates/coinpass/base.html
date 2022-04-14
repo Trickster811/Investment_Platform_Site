@@ -1,0 +1,305 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Invest Cryptocurrency Instantly | coinpass.com</title>
+
+         {% load static %}
+
+         <link rel="stylesheet" href="{% static 'coinpass/css/dashlite.css' %}" />
+
+        <link href="{% static 'coinpass/css/normalize.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'coinpass/css/webflow.css' %}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{ % static 'coinpass/css/coinpass-general.css' %}" type="text/css">
+        <link href="{% static 'coinpass/css/coinpass-live-landing.webflow.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'coinpass/images/favicon.png' %}" rel="shortcut icon" type="image/x-icon">
+        <link href="{% static 'coinpass/images/webclip.png' %}" rel="apple-touch-icon">
+        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet"> -->
+        <!-- <link rel="stylesheet" type="text/css" href="{% static 'coinpass/css/bootstrap.min.css' %}"/> -->
+        <link rel="stylesheet" type="text/css" href="{% static 'coinpass/css/flaticon.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'coinpass/css/prettyPhoto.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'coinpass/css/shortcodes.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'coinpass/css/main.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'coinpass/css/responsive.css' %}"/>
+    </head>
+    <body>
+        <!--page start-->
+        <div class="page-navigation wf-section">
+
+            <!--header start-->
+            <header class="navigation">
+                <nav class="navigation-desktop">
+                    <div class="navigation-desktop-primary">
+                        <a href="index.html" class="w-inline-block"><img src="{% static 'coinpass/images/coinpass-logo_nopadding.png' %}" srcset="{% static 'coinpass/images/coinpass-logo_nopadding-p-500.png 500w' %}, {% static 'coinpass/images/coinpass-logo_nopadding-p-800.png 800w' %}, {% static 'coinpass/images/coinpass-logo_nopadding-p-1080.png 1080w' %}, {% static 'coinpass/images/coinpass-logo_nopadding-p-1600.png 1600w' %}, {% static 'coinpass/images/coinpass-logo_nopadding.png 2880w' %}" height="30" sizes="(max-width: 479px) 136.140625px, 157.078125px" alt="coinpass logo black" class="logo_primary">
+                        </a>
+                    </div>
+                    <div class="navigation-desktop-secondary">
+                        <a href="en/prices" class="secondary-nav-link is--secondary w-inline-block">
+                          <img src="{% static 'coinpass/images/price-blinky.svg' %}" loading="lazy" width="10" alt="" class="pulse">
+                          <div>Live</div>
+                        </a>
+                        <div class="desk-dp-target">
+                            <a href="index.html" class="secondary-nav-link is--secondary w-inline-block">
+                              <div>About</div>
+                            </a>
+                            <div class="desk-dp">
+                              <div class="desk-dp-caret">
+                                <div class="caret-background"></div>
+                                <div class="caret-border"></div>
+                              </div>
+                              <div class="desk-dp-container">
+                                <div class="desk-dp-columns is--1">
+                                  <div class="dp-header is--header">
+                                    <div class="dropdown-subhead">Company</div>
+                                  </div>
+                                  <a href="en/about" class="dropdown-link w-inline-block w-clearfix"><img src="{% static 'coinpass/images/About-coinpass-1.svg" loading="lazy" width="23" alt="" class="image-18">
+                                    <div class="dropdown-link-title">About coinpass</div>
+                                  </a>
+                                  <a href="en/news" class="dropdown-link w-inline-block w-clearfix"><img src="{% static 'coinpass/images/News.svg" loading="lazy" width="21" alt="" class="image-19">
+                                    <div class="dropdown-link-title">News</div>
+                                  </a>
+                                  <a href="en/blog" class="dropdown-link w-inline-block w-clearfix"><img src="{% static 'coinpass/images/Blog.svg" loading="lazy" width="19" alt="" class="image-20">
+                                    <div class="dropdown-link-title">Blog</div>
+                                  </a>
+                                  <a href="en/promo/rewards" class="dropdown-link w-inline-block w-clearfix"><img src="{% static 'coinpass/images/Rewards--Promotions.svg" loading="lazy" width="19" alt="" class="image-22">
+                                    <div class="dropdown-link-title">Rewards &amp; Promotions</div>
+                                  </a>
+                                  <a href="en/contact" class="dropdown-link w-inline-block w-clearfix"><img src="{% static 'coinpass/images/Contact-Us.svg" loading="lazy" width="18" alt="" class="image-21">
+                                    <div class="dropdown-link-title">Contact Us</div>
+                                  </a>
+                                  <a href="en-gb" target="_blank" class="dropdown-link w-inline-block w-clearfix"><img src="{% static 'coinpass/images/get-support-1.svg" loading="lazy" height="18" alt="" class="image-24">
+                                    <div class="dropdown-link-title">Get Support</div>
+                                  </a>
+                                </div>
+                                <div class="desk-dp-columns is--2">
+                                  <div class="dp-header is--header">
+                                    <div class="dropdown-subhead">Legal</div>
+                                  </div>
+                                  <a href="en/legal/gdpr" class="dropdown-link w-inline-block w-clearfix"><img src="{% static 'coinpass/images/Data-Protection-Policy.svg" loading="lazy" width="16" alt="" class="image-25">
+                                    <div class="dropdown-link-title">Data Protection Policy</div>
+                                  </a>
+                                  <a href="en/legal/cookies" class="dropdown-link w-inline-block w-clearfix"><img src="{% static 'coinpass/images/Cookie-Policy.svg" loading="lazy" width="17" alt="" class="image-26">
+                                    <div class="dropdown-link-title">Cookie Policy</div>
+                                  </a>
+                                  <a href="en/legal/fees" class="dropdown-link w-inline-block w-clearfix"><img src="{% static 'coinpass/images/Platform-Fees.svg" loading="lazy" width="14" alt="" class="image-27">
+                                    <div class="dropdown-link-title">Fees</div>
+                                  </a>
+                                  <a href="en/legal/jurisdictions" class="dropdown-link w-inline-block w-clearfix"><img src="{% static 'coinpass/images/Permitted-Jurisdictions.svg" loading="lazy" width="18" alt="" class="image-28">
+                                    <div class="dropdown-link-title">Permitted Jurisdictions</div>
+                                  </a>
+                                  <a href="en/legal/privacy" class="dropdown-link w-inline-block w-clearfix"><img src="{% static 'coinpass/images/Privacy-Policy.svg" loading="lazy" width="18" alt="" class="image-23">
+                                    <div class="dropdown-link-title">Privacy Policy</div>
+                                  </a>
+                                  <a href="en/legal/terms" class="dropdown-link w-inline-block w-clearfix"><img src="{% static 'coinpass/images/Terms-and-Conditions.svg" loading="lazy" width="18" alt="" class="image-29">
+                                    <div class="dropdown-link-title">Terms and Conditions</div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="desk-dp-target">
+                            <a href="index.html" class="secondary-nav-link is--secondary w-inline-block">
+                                <div>Support</div>
+                            </a>
+                        </div>
+                        <a href="{% url 'coinpass:login' %}" target="_blank" class="button nav-cta-secondary w-button">Log In</a>
+                        <a id="button-download" href="{% url 'coinpass:register' %}" target="_blank" class="button nav-cta-primary w-button">Sign Up</a>
+                    </div>
+                </nav>
+                <nav class="navigation-mobile">
+                    <a data-w-id="ae13748f-cad1-8e0c-7936-4d7ff2c82e96" href="index.html" class="mob-nav-link is--mobile w-inline-block">
+                      <div class="navigation-mobile-icon is--open"></div>
+                      <div class="navigation-mobile-icon is--dismiss"></div>
+                    </a>
+                    <div class="mob-dp">
+                      <div class="mob-dp-container">
+                        <div class="mob-dp-columns is--prices">
+                          <a href="en/prices" class="dp-header is--link is--prices w-inline-block"><img src="{% static 'coinpass/images/price-blinky.svg" loading="lazy" width="10" alt="" class="pulse">
+                            <div class="dropdown-subhead is--prices">Prices</div>
+                          </a>
+                          <div class="mob-dp-footer-items">
+                            <a href="login.html" target="_blank" class="button nav-cta-secondary w-button">Sign In</a>
+                            <a id="button-download" href="register.html" target="_blank" class="button nav-cta-primary w-button">register.html</a>
+                          </div>
+                        </div>
+                        <div class="mob-dp-columns is--3">
+                          <div data-w-id="ae13748f-cad1-8e0c-7936-4d7ff2c82ee5" class="dp-header">
+                            <div class="dropdown-subhead">Company</div>
+                            <div class="dropdown-caret-symbol is--header"></div>
+                          </div>
+                          <div class="mob-dp-links">
+                            <a href="en/about" class="dropdown-link w-inline-block"><img src="{% static 'coinpass/images/About-coinpass-1.svg" loading="lazy" width="20" alt="" class="image-48">
+                              <div class="dropdown-link-title">About coinpass</div>
+                            </a>
+                            <a href="en/news" class="dropdown-link w-inline-block"><img src="{% static 'coinpass/images/News.svg" loading="lazy" width="21" alt="" class="image-49">
+                              <div class="dropdown-link-title">News</div>
+                            </a>
+                            <a href="en/blog" class="dropdown-link w-inline-block"><img src="{% static 'coinpass/images/Blog.svg" loading="lazy" width="19" alt="" class="image-50">
+                              <div class="dropdown-link-title">Blog</div>
+                            </a>
+                            <a href="en/promo/rewards" class="dropdown-link w-inline-block"><img src="{% static 'coinpass/images/Rewards--Promotions.svg" loading="lazy" width="19" alt="" class="image-51">
+                              <div class="dropdown-link-title">Rewards &amp; Promotions</div>
+                            </a>
+                            <a href="en/contact" class="dropdown-link w-inline-block"><img src="{% static 'coinpass/images/Contact-Us.svg" loading="lazy" width="18" alt="" class="image-52">
+                              <div class="dropdown-link-title">Contact Us</div>
+                            </a>
+                            <a href="https://coinpass.zendesk.com/hc/en-gb" target="_blank" class="dropdown-link w-inline-block"><img src="{% static 'coinpass/images/get-support-1.svg" loading="lazy" height="18" alt="" class="image-53">
+                              <div class="dropdown-link-title">Get Support</div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="mob-dp-columns is--4">
+                          <div data-w-id="ae13748f-cad1-8e0c-7936-4d7ff2c82f00" class="dp-header">
+                            <div class="dropdown-subhead">Legal</div>
+                            <div class="dropdown-caret-symbol is--header"></div>
+                          </div>
+                          <div class="mob-dp-links">
+                            <a href="en/legal/cookies" class="dropdown-link w-inline-block"><img src="{% static 'coinpass/images/Cookie-Policy.svg" loading="lazy" width="17" alt="" class="image-54">
+                              <div class="dropdown-link-title">Cookie Policy</div>
+                            </a>
+                            <a href="en/legal/gdpr" class="dropdown-link w-inline-block"><img src="{% static 'coinpass/images/Data-Protection-Policy.svg" loading="lazy" width="16" alt="" class="image-55">
+                              <div class="dropdown-link-title">Data Protection Policy</div>
+                            </a>
+                            <a href="en/legal/jurisdictions" class="dropdown-link w-inline-block"><img src="{% static 'coinpass/images/Permitted-Jurisdictions.svg" loading="lazy" width="18" alt="" class="image-56">
+                              <div class="dropdown-link-title">Permitted Jurisdictions</div>
+                            </a>
+                            <a href="en/legal/fees" class="dropdown-link w-inline-block"><img src="{% static 'coinpass/images/Platform-Fees.svg" loading="lazy" width="14" alt="" class="image-57">
+                              <div class="dropdown-link-title">Platform Fees</div>
+                            </a>
+                            <a href="en/legal/privacy" class="dropdown-link w-inline-block"><img src="{% static 'coinpass/images/Privacy-Policy.svg" loading="lazy" width="18" alt="" class="image-58">
+                              <div class="dropdown-link-title">Privacy Policy</div>
+                            </a>
+                            <a href="en/legal/terms" class="dropdown-link w-inline-block"><img src="{% static 'coinpass/images/Terms-and-Conditions.svg" loading="lazy" width="18" alt="" class="image-59">
+                              <div class="dropdown-link-title">Terms and Conditions</div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="mob-dp-social">
+                          <a href="https://www.facebook.com/coinpassglobal/" target="_blank" class="social w-inline-block">
+                            <div class="fa-icon-brand"></div>
+                          </a>
+                          <a href="https://twitter.com/coinpassglobal" target="_blank" class="social w-inline-block">
+                            <div class="fa-icon-brand"></div>
+                          </a>
+                          <a href="https://coinpassglobal.medium.com" target="_blank" class="social w-inline-block">
+                            <div class="fa-icon-brand"></div>
+                          </a>
+                          <a href="https://www.linkedin.com/company/coinpass/" target="_blank" class="social w-inline-block">
+                            <div class="fa-icon-brand"></div>
+                          </a>
+                          <a href="https://www.youtube.com/channel/UCfs5WkT1mecmB0YWJipJLdw" target="_blank" class="social w-inline-block">
+                            <div class="fa-icon-brand"></div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="mob-dp-footer">
+                        <a href="en/prices" class="mob-dp-footer-items w-inline-block"><img src="{% static 'coinpass/images/price-blinky.svg" loading="lazy" width="10" alt="" class="pulse">
+                          <div>Live</div>
+                        </a>
+                        <div class="mob-dp-footer-items is--social">
+                          <a href="https://www.facebook.com/coinpassglobal/" target="_blank" class="social w-inline-block"><img src="{% static 'coinpass/images/Facebook.svg" loading="lazy" width="14" alt="" class="image-66"></a>
+                          <a href="https://twitter.com/coinpassglobal" target="_blank" class="social w-inline-block"><img src="{% static 'coinpass/images/Twitter.svg" loading="lazy" width="14" alt="" class="image-67"></a>
+                          <a href="https://coinpassglobal.medium.com" target="_blank" class="social w-inline-block"><img src="{% static 'coinpass/images/Medium.svg" loading="lazy" width="14" alt="" class="image-68"></a>
+                          <a href="https://www.linkedin.com/company/coinpass/" target="_blank" class="social w-inline-block"><img src="{% static 'coinpass/images/Linkedin.svg" loading="lazy" width="12" alt="" class="image-69"></a>
+                          <a href="https://www.youtube.com/channel/UCfs5WkT1mecmB0YWJipJLdw" target="_blank" class="social w-inline-block"><img src="{% static 'coinpass/images/Youtube.svg" loading="lazy" width="16" alt="" class="image-70"></a>
+                          <a href="https://www.instagram.com/coinpassglobal" target="_blank" class="social w-inline-block"><img src="{% static 'coinpass/images/Instagram.svg" loading="lazy" width="14" alt="" class="image-71"></a>
+                        </div>
+                        <div class="mob-dp-footer-items">
+                          <a href="{% url 'coinpass:login' %}" target="_blank" class="button nav-cta-secondary w-button">Sign In</a>
+                        </div>
+                      </div>
+                    </div>
+                </nav>
+                <div class="navigation-bg"></div>
+            </header>
+            <!--header end-->
+            <div class="navigation-bg"></div>
+            <div class="navigation-highlight"></div>
+        </div>
+        <!--main start-->
+        {% block content %}{% endblock %}
+        <!--main end-->
+        <!--footer start-->
+        <nav class="navbar navbar-light" style="background-color: #363d49;">
+            <footer class="max-width d-flex flex-wrap justify-content-between align-items-center ">
+                <div class="max-width is-verticale wf-section">   
+                    <div class="footer-header">
+                    <a href="http://www.coinpass.com" class="w-inline-block"><img src="{% static 'coinpass/images/coinpass-logo-glyph-inverted_nopadding.png" loading="lazy" height="30" sizes="(max-width: 991px) 38.78125px, 100vw" srcset="{% static 'coinpass/images/coinpass-logo-glyph-inverted_nopadding-p-500.png 500w, {% static 'coinpass/images/coinpass-logo-glyph-inverted_nopadding.png 680w" alt="coinpass favicon white" class="logo-glyph_secondary"><img src="{% static 'coinpass/images/coinpass-logo-inverted_nopadding.png" loading="lazy" height="30" sizes="(max-width: 991px) 100vw, 157.078125px" srcset="{% static 'coinpass/images/coinpass-logo-inverted_nopadding-p-500.png 500w, {% static 'coinpass/images/coinpass-logo-inverted_nopadding-p-800.png 800w, {% static 'coinpass/images/coinpass-logo-inverted_nopadding-p-1080.png 1080w, {% static 'coinpass/images/coinpass-logo-inverted_nopadding-p-1600.png 1600w, {% static 'coinpass/images/coinpass-logo-inverted_nopadding.png 2880w" alt="coinpass logo white" class="logo_secondary"></a>
+                    <div class="div-block-16">
+                        <a href="https://www.facebook.com/coinpassglobal/" target="_blank" class="social-links w-inline-block"><img src="{% static 'coinpass/images/Facebook.svg" loading="lazy" width="19" height="19" alt="" class="image-60"></a>
+                        <a href="https://twitter.com/coinpassglobal" target="_blank" class="social-links w-inline-block"><img src="{% static 'coinpass/images/Twitter.svg" loading="lazy" width="20" height="19" alt="" class="image-63"></a>
+                        <a href="https://coinpassglobal.medium.com" target="_blank" class="social-links w-inline-block"><img src="{% static 'coinpass/images/Medium.svg" loading="lazy" width="19" height="19" alt="" class="image-62"></a>
+                        <a href="https://www.linkedin.com/company/coinpass/" target="_blank" class="social-links w-inline-block"><img src="{% static 'coinpass/images/Linkedin.svg" loading="lazy" width="19" height="19" alt="" class="image-61"></a>
+                        <a href="https://www.youtube.com/channel/UCfs5WkT1mecmB0YWJipJLdw" target="_blank" class="social-links w-inline-block"><img src="{% static 'coinpass/images/Youtube.svg" loading="lazy" height="19" alt="" class="image-64"></a>
+                        <a href="https://www.instagram.com/coinpassglobal" target="_blank" class="social-links w-inline-block"><img src="{% static 'coinpass/images/Instagram.svg" loading="lazy" height="19" alt="" class="image-65"></a>
+                    </div>
+                    <div class="credits-columns">
+                      <div class="news-title is--size-12">© 2021</div>
+                      <p>Coinpass Limited<br>All Rights Reserved<br>‍</p>
+                    </div>
+                </div>
+            </footer>
+        </nav>
+        <div class="nk-footer">
+          <div class="container-fluid">
+              <div class="nk-footer-wrap">
+                  <div class="nk-footer-copyright">
+                      &copy; 2022 <a href="https://coinpass.com" target="_blank">Coinpass</a> | All Rights Reserved
+                  </div>
+                  <div class="nk-footer-links">
+                      <ul class="nav nav-sm">
+                          <li class="nav-item dropup">
+                          <a
+                              herf="#"
+                              class="dropdown-toggle dropdown-indicator has-indicator nav-link"
+                              data-toggle="dropdown"
+                              data-offset="0,10"
+                              ><span>English</span></a
+                          >
+                          <div
+                              class="dropdown-menu dropdown-menu-sm dropdown-menu-right"
+                          >
+                              <ul class="language-list">
+                              <li>
+                                  <a href="#" class="language-item"
+                                  ><span class="language-name">English</span></a
+                                  >
+                              </li>
+                              <li>
+                                  <a href="#" class="language-item"
+                                  ><span class="language-name">Español</span></a
+                                  >
+                              </li>
+                              <li>
+                                  <a href="#" class="language-item"
+                                  ><span class="language-name">Français</span></a
+                                  >
+                              </li>
+                              <li>
+                                  <a href="#" class="language-item"
+                                  ><span class="language-name">Türkçe</span></a
+                                  >
+                              </li>
+                              </ul>
+                          </div>
+                          </li>
+                          <li class="nav-item">
+                          <a
+                              href="#"
+                              data-toggle="modal"
+                              data-target="#region"
+                              class="nav-link"
+                              ><em class="icon ni ni-globe"></em
+                              ><span class="ml-1">Select Region</span></a
+                          >
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+        <!--footer end-->
+        <!--page end-->
+    </body>
+</html>

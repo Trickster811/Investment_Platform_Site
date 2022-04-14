@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Softnio" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+    
+        {% load static %}
+    
+        <link rel="shortcut icon" href="{% static 'dashboard/images/favicon.ico' %}" />
+        <title>Registration | Coinpass Investment Platform</title>
+        <link rel="stylesheet" href="{% static 'dashboard/css/dashlite.css' %}" />
+        <link
+          id="skin-default"
+          rel="stylesheet"
+          href="{% static 'dashboard/css/theme.css' %}"
+        />
+        <script src="{% static 'dashboard/js/bundle.js' %}"></script>
+        <script src="{% static 'dashboard/js/scripts.js' %}"></script>
+        <script src="{% static 'dashboard/js/demo-settings.js' %}"></script>
+    
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-91615293-4"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag("js", new Date());
+          gtag("config", "UA-91615293-4");
+        </script>
+      </head>
+      <body class="nk-body dark-mode npc-default pg-auth">
+    <div class="nk-app-root">
+      <div class="nk-main">
+        <div class="nk-wrap nk-wrap-nosidebar">
+          <div class="nk-content">
+            <div class="nk-block nk-block-middle nk-auth-body">
+              <div class="brand-logo pb-5">
+
+              <!-- Displaying messages -->
+
+              {% if messages %}
+              <ul class="messages">
+                  {% for message in messages %}
+                  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                  {% endfor %}
+              </ul>
+              {% endif %}
+
+              <!-- Displaying messages -->
+              
+                <a href="{% url 'index' %}" class="logo-link">
+                  <img
+                    class="logo-light logo-img logo-img-lg"
+                    src="{% static 'dashboard/images/coinpass-logo-inverted_nopadding.png' %}" 
+                    srcset="images/coinpass-logo-inverted_nopadding-p-500.png 2x"
+                    alt="logo-light"
+                  />
+                </a>
+              </div>
+              <div class="nk-block-head">
+                <div class="nk-block-head-content">
+                  <h5 class="nk-block-title">Register</h5>
+                  <div class="nk-block-des">
+                    <p>Create New Coinpass Account</p>
+                  </div>
+                </div>
+              </div>
+              <form action="" method="post">
+                
+                {% csrf_token %}
+                
+                <div class="form-group">
+                  <label class="form-label" for="{{ user_reg.user_dad.id_for_label }}">Refferal Id</label>
+                  <div class="form-control-wrap">
+
+                    {{ user_reg.user_dad }}
+                    <!-- <input
+                      type="text"
+                      class="form-control form-control-lg"
+                      id="name"
+                      placeholder="Enter your name"
+                    /> -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="{{ user_reg.name.id_for_label }}">Full Name</label>
+                  <div class="form-control-wrap">
+
+                    {{ user_reg.name }}
+                    <!-- <input
+                      type="text"
+                      class="form-control form-control-lg"
+                      id="name"
+                      placeholder="Enter your name"
+                    /> -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="{{ user_reg.phone.id_for_label }}"
+                    >Phone</label
+                  >
+                  <div class="form-control-wrap">
+
+                    {{ user_reg.phone }}
+
+                  </div>
+                </div>
+                <div class="form-group {% if user_reg.image.errors %}has-warning has-feedback{% endif %}">
+                  <label class="form-label" for="{{ user_reg.image.id_for_label }}">
+                    Profile pic
+                  </label>
+                  <div class="form-control-wrap">
+                    
+                    {{ user_reg.image }}
+                    
+                  </div>
+                </div>
+                <div class="form-group {% if user_reg.email.errors %}has-warning has-feedback{% endif %}">
+                  <label class="form-label" for="{{ user_reg.email.id_for_label }}"
+                    >Email</label
+                  >
+                  <div class="form-control-wrap">
+
+                    {{ user_reg.email }}
+                    <!-- <input
+                      type="text"
+                      class="form-control form-control-lg"
+                      id="email"
+                      placeholder="Enter your email address"
+                    /> -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="{{ user_log.password.id_for_label }}">Password</label>
+                  <div class="form-control-wrap">
+                    <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch lg" data-target="password">
+                        <em class="passcode-icon icon-show icon ni ni-eye"></em>
+                        <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
+                      </a>
+
+                      {{ user_log.password }}
+                    <!-- <input
+                      type="password"
+                      class="form-control form-control-lg"
+                      id="password"
+                      placeholder="Enter your password"
+                    /> -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="custom-control custom-control-xs custom-checkbox">
+
+                    {{ user_reg.checkbox }}
+                    <!-- <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="checkbox"
+                    /> -->
+                    <label class="custom-control-label" for="{{ user_reg.checkbox.id_for_label }}">
+                      I agree to Coinpass
+                      <a tabindex="-1" href="#">Privacy Policy</a> &amp;
+                      <a tabindex="-1" href="#"> Terms.</a>
+                      </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-lg btn-primary btn-block">
+                    Register
+                  </button>
+                </div>
+              </form>
+
+              <!-- if our form has errors on email -->
+
+              {% if errors %}
+              <div style="color: red;">
+                {% for key, error in errors %}
+                  {% autoescape off %}
+                    {{ error }}
+                  {% endautoescape %}
+                {% endfor %}
+              </div>
+            {% endif %}
+            
+
+              <!-- {% if errors %}
+                <div>
+                  {% for key, error in errors %}
+                    {% autoescape off %}
+                      {{ error }}
+                    {% endautoescape %}
+                  {% endfor %}
+                </div>
+              {% endif %} -->
+
+              <div class="form-note-s2 pt-4">
+                Already have an account ?
+                <a href="{% url 'coinpass:login' %}"
+                  ><strong>Sign in instead</strong></a
+                >
+              </div>
+              <div class="text-center pt-4 pb-3">
+                <h6 class="overline-title overline-title-sap">
+                  <span>OR</span>
+                </h6>
+              </div>
+              <ul class="nav justify-center gx-8">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Facebook</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Google</a>
+                </li>
+              </ul>
+            </div>
+            <div class="nk-block nk-auth-footer">
+              <div class="nk-block-between">
+                <ul class="nav nav-sm">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Terms & Condition</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Privacy Policy</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Help</a>
+                  </li>
+                  <li class="nav-item dropup">
+                    <a
+                      class="dropdown-toggle dropdown-indicator has-indicator nav-link"
+                      data-toggle="dropdown"
+                      data-offset="0,10"
+                      ><small>English</small></a
+                    >
+                    <div
+                      class="dropdown-menu dropdown-menu-sm dropdown-menu-right"
+                    >
+                      <ul class="language-list">
+                        <li>
+                          <a href="#" class="language-item"
+                            ><img
+                              src="{% static 'dashboard/images/flags/english.png' %}"
+                              alt=""
+                              class="language-flag"
+                            /><span class="language-name">English</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="language-item"
+                            ><img
+                              src="{% static 'dashboard/images/flags/spanish.png' %}"
+                              alt=""
+                              class="language-flag"
+                            /><span class="language-name">Español</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="language-item"
+                            ><img
+                              src="{% static 'dashboard/images/flags/french.png' %}"
+                              alt=""
+                              class="language-flag"
+                            /><span class="language-name">Français</span></a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="language-item"
+                            ><img
+                              src="{% static 'dashboard/images/flags/turkey.png' %}"
+                              alt=""
+                              class="language-flag"
+                            /><span class="language-name">Türkçe</span></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-3">
+                <p>&copy; 2022 Coinpass. All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </body>
+</html>
