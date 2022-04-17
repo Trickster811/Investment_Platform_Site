@@ -1,4 +1,5 @@
 # Investment_Platform_Site
+Coded using Django Framework
 #
 ![Screenshot from 2022-02-23 15-12-53](https://user-images.githubusercontent.com/85533348/163676203-d15f2f30-37cd-4183-a3ba-ee12bdb8f48d.png)
 #
