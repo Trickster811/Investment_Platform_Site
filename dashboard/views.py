@@ -13,7 +13,7 @@ def dashboard(request):
 
 def index(request):
 
-    # Checking an existing session before rendering the template. 
+    # Checking  an existing session before rendering the template. 
     # If not the user is redirected to the login page.
     if 'user_session' in request.session:
         session = request.session['user_session']
