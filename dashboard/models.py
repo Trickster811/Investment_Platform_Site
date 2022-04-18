@@ -44,7 +44,7 @@ class type_plan(models.Model):
     nameTp = models.CharField(max_length=10, null=False, unique=True)
     percentageTp = models.PositiveIntegerField(null=False, unique=True)
     minimumTp = models.PositiveIntegerField(null=False, unique=True)
-    maximumTp = models.PositiveBigIntegerField(null=True, unique=True)
+    maximumTp = models.PositiveIntegerField(null=True, unique=True)
     numberdayTp = models.PositiveIntegerField(null=False)
 
 class plan(models.Model):

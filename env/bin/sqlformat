@@ -1,4 +1,4 @@
-#!/home/macnight/Documents/PROJECTS/django/coinpass_investment_platform/env/bin/python
+#!/home/macnight/Documents/PROJECTS/django/coinpass_investment_platform/env/bin/python3.10
 # -*- coding: utf-8 -*-
 import re
 import sys
