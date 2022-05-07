@@ -117,14 +117,15 @@ def register(request):
     context = {}
 
     if request.method == 'POST':
-        user_reg = user_register(request.POST, request.FILES)
+        user_reg = user_register(request.POST)
         # check if form data is valid
         if user_reg.is_valid():
+            print('jaja')
             email = user_reg.cleaned_data['email']
             name = user_reg.cleaned_data['name']
             phone = user_reg.cleaned_data['phone']
-            image = user_reg.cleaned_data['image']
-            user_dad = user_reg.cleaned_data['user_dad']
+            # image = user_reg.cleaned_data['image']
+            # user_dad = user_reg.cleaned_data['user_dad']
             password = request.POST.get('password')
 
             with transaction.atomic():
@@ -135,8 +136,8 @@ def register(request):
                             name = name,
                             phone = phone,
                             email = email,
-                            user_dad = user_dad,
-                            image = image,
+                            # user_dad = user_dad,
+                            # image = image,
                         )
 
                         account.objects.create(

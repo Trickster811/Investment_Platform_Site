@@ -6,11 +6,11 @@ class current(models.Model):
     email_c = models.EmailField(max_length=100, null=False)
 
 class user(models.Model):
-    user_dad  = models.ForeignKey('self', on_delete=models.DO_NOTHING, null=False, related_name='children')
+    # user_dad  = models.ForeignKey('self', on_delete=models.DO_NOTHING, null=False, related_name='children')
     name = models.CharField(max_length=50, null=False)
     phone = models.CharField(max_length=15, null=False)
     email = models.EmailField(max_length=100, null=False)
-    image = models.ImageField(upload_to='static/dashboard/images/avatar', null=False)
+    image = models.ImageField(upload_to='static/dashboard/images/avatar', null=True)
     refferal_bonus = models.DecimalField(max_digits=15, decimal_places=2, default=0, null=False)
     checkbox = models.BooleanField(default=True, null=False)
 

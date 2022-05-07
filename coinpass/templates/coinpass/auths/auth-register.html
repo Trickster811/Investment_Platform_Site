@@ -72,51 +72,35 @@
                   </div>
                 </div>
               </div>
-              <form enctype="multipart/form-data" action="" method="post">
+              <form action="" method="post">
                 
                 {% csrf_token %}
                 
-                <div class="form-group">
-                  <div class="form-label-group">                      
-                    <label class="form-label" for="{{ user_reg.user_dad.id_for_label }}">
-                      Refferal Id
-                    </label>
-                  </div>
+                <!-- <div class="form-group">               
+                  <label class="form-label" for="{{ user_reg.user_dad.id_for_label }}">Refferal Id</label>
                   <div class="form-control-wrap">
 
                     {{ user_reg.user_dad }}
-                    <!-- <input
-                      type="text"
-                      class="form-control form-control-lg"
-                      id="name"
-                      placeholder="Enter your name"
-                    /> -->
+                    
                   </div>
-                </div>
+                </div> -->
                 <div class="form-group">
                   <label class="form-label" for="{{ user_reg.name.id_for_label }}">Full Name</label>
                   <div class="form-control-wrap">
 
                     {{ user_reg.name }}
-                    <!-- <input
-                      type="text"
-                      class="form-control form-control-lg"
-                      id="name"
-                      placeholder="Enter your name"
-                    /> -->
+              
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="{{ user_reg.phone.id_for_label }}"
-                    >Phone</label
-                  >
+                  <label class="form-label" for="{{ user_reg.phone.id_for_label }}">Phone</label>
                   <div class="form-control-wrap">
 
                     {{ user_reg.phone }}
 
                   </div>
                 </div>
-                <div class="form-group {% if user_reg.image.errors %}has-warning has-feedback{% endif %}">
+                <!-- <div class="form-group {% if user_reg.image.errors %}has-warning has-feedback{% endif %}">
                   <label class="form-label" for="{{ user_reg.image.id_for_label }}">
                     Profile pic
                   </label>
@@ -125,20 +109,13 @@
                     {{ user_reg.image }}
                     
                   </div>
-                </div>
+                </div> -->
                 <div class="form-group {% if user_reg.email.errors %}has-warning has-feedback{% endif %}">
-                  <label class="form-label" for="{{ user_reg.email.id_for_label }}"
-                    >Email</label
-                  >
+                  <label class="form-label" for="{{ user_reg.email.id_for_label }}">Email</label>
                   <div class="form-control-wrap">
 
                     {{ user_reg.email }}
-                    <!-- <input
-                      type="text"
-                      class="form-control form-control-lg"
-                      id="email"
-                      placeholder="Enter your email address"
-                    /> -->
+                    
                   </div>
                 </div>
                 <div class="form-group">
@@ -150,23 +127,14 @@
                       </a>
 
                       {{ user_log.password }}
-                    <!-- <input
-                      type="password"
-                      class="form-control form-control-lg"
-                      id="password"
-                      placeholder="Enter your password"
-                    /> -->
+                    
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="custom-control custom-control-xs custom-checkbox">
 
                     {{ user_reg.checkbox }}
-                    <!-- <input
-                      type="checkbox"
-                      class="custom-control-input"
-                      id="checkbox"
-                    /> -->
+                    
                     <label class="custom-control-label" for="{{ user_reg.checkbox.id_for_label }}">
                       I agree to Coinpass
                       <a tabindex="-1" href="#">Privacy Policy</a> &amp;
