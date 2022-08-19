@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.shortcuts import redirect, render
-from django.db import transaction
+from django.db import IntegrityError, transaction
 
 from .models import *
 from .forms import *
@@ -133,15 +133,58 @@ def user_profile(request):
         session = request.session['user_session']
         print(session)
         request.session.get_expiry_age()
-        # del request.session['user_session']
         user_info = user.objects.get(email=session)
         account_info = account.objects.get(user_a_id = user_info.pk)
+
+        # Form verification for updating user's informations __Start__
+
+        if request.method == 'POST':
+            user_settings = userSettings(request.POST)
+            user_account_settings = userAccountSettings(request.POST)
+            # check if form data is valid
+            if user_settings.is_valid():
+                name = user_settings.cleaned_data['name']
+                phone = user_settings.cleaned_data['phone']
+                image = user_settings.cleaned_data['image']
+                password = user_account_settings.cleaned_data['password']
+
+                with transaction.atomic():
+                    try:
+                        if name != '':
+                            user.objects.get(
+                                name = name,
+                                phone = phone,
+                                image = image,
+                            )
+                        if phone != '':
+                            user.objects.get(
+                                image = image,
+                            )
+                        if image != '':
+                            user.objects.get(
+                                image = image,
+                            )
+                        if password != '':
+                            account.objects.update(password = password)
+                    except IntegrityError:
+                        user_settings.errors['internal'] = "Oups! Servers got errors. Please retry!!"
+        else:
+            user_settings = userSettings()
+            user_account_settings = userAccountSettings()
+
         context = {
             'user' : user_info,
             'account' : account_info,
+            'user_settings' : user_settings,
+            'user_account_settings': user_account_settings,
+            'errors' : user_settings.errors.items()
         }
 
         return render(request, 'dashboard/user_profile.html', context)
+
+        # Form verification for updating user's informations __End__    
+
     else:
         return dashboard(request)
+
         

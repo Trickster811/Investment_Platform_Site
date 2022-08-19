@@ -137,7 +137,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = "nedaoukajoachim@gmail.com"
 DEFAULT_FROM_EMAIL = 'nedaoukajoachim@gmail.com'
 SERVER_EMAIL = 'nedaoukajoachim@gmail.com'
-EMAIL_HOST_PASSWORD = "zzzkgxorpbokiznk" # "Leslie@04" # "kczjeblhumrgqtpf"
+EMAIL_HOST_PASSWORD = "zzzkgxorpbokiznk"
 
 INTERNAL_IPS = ['127.0.0.1']
 

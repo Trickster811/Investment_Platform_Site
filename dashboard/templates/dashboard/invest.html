@@ -26,6 +26,7 @@
                   <form action="" method="post">
 
                     {% csrf_token %}
+
                     <div class="row g-gs">
                       <div class="col-xxl-6">
                         <div class="card is-dark h-100">
@@ -55,18 +56,18 @@
                         <label class="form-label">Choose a plan</label>
                         <div class="form-control-wrap">
                           <div class="form-control-select">
-                            <select class="form-control" id="default-06">
-                              <option value="default_option">
+                            <select class="form-control" id="default-06" aria-placeholder="Choose a plan">
+                              <!-- <option value="default_option">
                                 Choose
+                              </option> -->
+                              <option value="option_select_name">
+                                Bronze Plan ($50 - $4999)
                               </option>
                               <option value="option_select_name">
-                                Bronze Plan
+                                Silver Plan ($5000 - $9999)
                               </option>
                               <option value="option_select_name">
-                                Silver Plan
-                              </option>
-                              <option value="option_select_name">
-                                Gold Plan
+                                Gold Plan ($10.000 - ~)
                               </option>
                             </select>
                           </div>
@@ -170,24 +171,27 @@
                           <label class="form-label" for="{{ invest.payerDep.id_for_label }}"
                             >Payment Methods</label
                           >
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <select class="form-control" id="default-06">
-                                <option value="default_option">Bitcoin</option>
-                                <option value="option_select_name">
-                                  Ethereum
-                                </option>
-                                <option value="option_select_name">
-                                  Perfect Money
-                                </option>
-                              </select>
+                          <div class="form-control-wrap">
+                            <div class="input-group">
+                              <div class="input-group-append">
+                                <select
+                                  type="select"
+                                  id="exampleCustomSelect"
+                                  name="customSelect"
+                                  class="custom-select"
+                                  style="background: #bdbdbd "
+                                >
+                                  <option value="">Select</option>
+                                  <option>Bitcoin</option>
+                                  <option>Perfect Money</option>
+                                </select>
+                              </div>
+                              <input
+                                placeholder="your wallet here"
+                                type="text"
+                                class="form-control"
+                              />
                             </div>
-                            <input
-                              type="text"
-                              class="form-control"
-                              placeholder="your wallet here"
-                              required=""
-                            />
                           </div>
                         </div>
                       </div>

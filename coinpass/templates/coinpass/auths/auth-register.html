@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="{% static 'dashboard/images/favicon.ico' %}" />
     <title>Registration | Coinpass Investment Platform</title>
-    <link rel="stylesheet" href="{% static 'dashboard/css/dashlite.css' %}" />
+    <link rel="stylesheet" href="{% static 'dashboard/css/coinpass.css' %}" />
     <link
       id="skin-default"
       rel="stylesheet"
@@ -39,11 +39,11 @@
       <div class="nk-main">
         <div class="nk-wrap nk-wrap-nosidebar">
           <div class="nk-content">
-            <div class="nk-block nk-block-middle nk-auth-body">
-              <div class="brand-logo pb-5">
-
+            <div class="nk-block nk-block-middle nk-auth-body wide-xs">
+              <div class="brand-logo pb-4 text-center">
+          
                 <!-- Displaying messages -->
-
+          
                 {% if messages %}
                 <ul class="messages">
                     {% for message in messages %}
@@ -51,135 +51,138 @@
                     {% endfor %}
                 </ul>
                 {% endif %}
-
+          
                 <!-- Displaying messages -->
-              
+          
                 <a href="{% url 'index' %}" class="logo-link">
                   <img
                     class="logo-light logo-img logo-img-lg"
-                    src="{% static 'dashboard/images/coinpass-logo-inverted_nopadding.png' %}" 
+                    src="{% static 'dashboard/images/coinpass-logo-inverted_nopadding.png' %}"
                     srcset="images/coinpass-logo-inverted_nopadding-p-500.png 2x"
                     alt="logo-light"
                   />
                 </a>
               </div>
               <div class="card">
-              <div class="nk-block-head">
-                <div class="nk-block-head-content">
-                  <h5 class="nk-block-title">Register</h5>
-                  <div class="nk-block-des">
-                    <p>Create New Coinpass Account</p>
+                <div class="card-inner card-inner-lg">
+                  <div class="nk-block-head">
+                    <div class="nk-block-head-content">
+                      <h4 class="nk-block-title">Sign-In</h4>
+                      <div class="nk-block-des">
+                        <p>
+                          Access Your Coinpass Investment Platform Dashboard.
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <form action="" method="post">
-                
-                {% csrf_token %}
-                
-                <!-- <div class="form-group">               
-                  <label class="form-label" for="{{ user_reg.user_dad.id_for_label }}">Refferal Id</label>
-                  <div class="form-control-wrap">
-
-                    {{ user_reg.user_dad }}
+                  <form action="" method="post">
+                          
+                    {% csrf_token %}
                     
-                  </div>
-                </div> -->
-                <div class="form-group">
-                  <label class="form-label" for="{{ user_reg.name.id_for_label }}">Full Name</label>
-                  <div class="form-control-wrap">
-
-                    {{ user_reg.name }}
-              
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="{{ user_reg.phone.id_for_label }}">Phone</label>
-                  <div class="form-control-wrap">
-
-                    {{ user_reg.phone }}
-
-                  </div>
-                </div>
-                <!-- <div class="form-group {% if user_reg.image.errors %}has-warning has-feedback{% endif %}">
-                  <label class="form-label" for="{{ user_reg.image.id_for_label }}">
-                    Profile pic
-                  </label>
-                  <div class="form-control-wrap">
-                    
-                    {{ user_reg.image }}
-                    
-                  </div>
-                </div> -->
-                <div class="form-group {% if user_reg.email.errors %}has-warning has-feedback{% endif %}">
-                  <label class="form-label" for="{{ user_reg.email.id_for_label }}">Email</label>
-                  <div class="form-control-wrap">
-
-                    {{ user_reg.email }}
-                    
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="{{ user_log.password.id_for_label }}">Password</label>
-                  <div class="form-control-wrap">
-                    <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch lg" data-target="password">
-                        <em class="passcode-icon icon-show icon ni ni-eye"></em>
-                        <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
-                      </a>
-
-                      {{ user_log.password }}
-                    
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="custom-control custom-control-xs custom-checkbox">
-
-                    {{ user_reg.checkbox }}
-                    
-                    <label class="custom-control-label" for="{{ user_reg.checkbox.id_for_label }}">
-                      I agree to Coinpass
-                      <a tabindex="-1" href="#">Privacy Policy</a> &amp;
-                      <a tabindex="-1" href="#"> Terms.</a>
+                    <!-- <div class="form-group">               
+                      <label class="form-label" for="{{ user_reg.user_dad.id_for_label }}">Refferal Id</label>
+                      <div class="form-control-wrap">
+          
+                        {{ user_reg.user_dad }}
+                        
+                      </div>
+                    </div> -->
+                    <div class="form-group">
+                      <label class="form-label" for="{{ user_reg.name.id_for_label }}">Full Name</label>
+                      <div class="form-control-wrap">
+          
+                        {{ user_reg.name }}
+                  
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="{{ user_reg.phone.id_for_label }}">Phone</label>
+                      <div class="form-control-wrap">
+          
+                        {{ user_reg.phone }}
+          
+                      </div>
+                    </div>
+                    <!-- <div class="form-group {% if user_reg.image.errors %}has-warning has-feedback{% endif %}">
+                      <label class="form-label" for="{{ user_reg.image.id_for_label }}">
+                        Profile pic
                       </label>
+                      <div class="form-control-wrap">
+                        
+                        {{ user_reg.image }}
+                        
+                      </div>
+                    </div> -->
+                    <div class="form-group {% if user_reg.email.errors %}has-warning has-feedback{% endif %}">
+                      <label class="form-label" for="{{ user_reg.email.id_for_label }}">Email</label>
+                      <div class="form-control-wrap">
+          
+                        {{ user_reg.email }}
+                        
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="{{ user_log.password.id_for_label }}">Password</label>
+                      <div class="form-control-wrap">
+                        <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch lg" data-target="password">
+                            <em class="passcode-icon icon-show icon ni ni-eye"></em>
+                            <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
+                          </a>
+          
+                          {{ user_log.password }}
+                        
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="custom-control custom-control-xs custom-checkbox">
+          
+                        {{ user_reg.checkbox }}
+                        
+                        <label class="custom-control-label" for="{{ user_reg.checkbox.id_for_label }}">
+                          I agree to Coinpass
+                          <a tabindex="-1" href="#">Privacy Policy</a> &amp;
+                          <a tabindex="-1" href="#"> Terms.</a>
+                          </label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <button class="btn btn-lg btn-primary btn-block">
+                        Register
+                      </button>
+                    </div>
+                  </form>
+          
+                  <!-- if our form has errors on email -->
+          
+                  {% if errors %}
+                  <div style="color: red;">
+                    {% for key, error in errors %}
+                      {% autoescape off %}
+                        {{ error }}
+                      {% endautoescape %}
+                    {% endfor %}
                   </div>
+                  {% endif %}
+          
+                  <div class="form-note-s2 pt-4">
+                    Already have an account ?
+                    <a href="{% url 'coinpass:login' %}">
+                      <strong>Sign in instead</strong></a>
+                  </div>
+                  <div class="text-center pt-4 pb-3">
+                    <h6 class="overline-title overline-title-sap">
+                      <span>OR</span>
+                    </h6>
+                  </div>
+                  <ul class="nav justify-center gx-8">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Facebook</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Google</a>
+                    </li>
+                  </ul>
                 </div>
-                <div class="form-group">
-                  <button class="btn btn-lg btn-primary btn-block">
-                    Register
-                  </button>
-                </div>
-              </form>
-
-              <!-- if our form has errors on email -->
-
-              {% if errors %}
-              <div style="color: red;">
-                {% for key, error in errors %}
-                  {% autoescape off %}
-                    {{ error }}
-                  {% endautoescape %}
-                {% endfor %}
-              </div>
-              {% endif %}
-
-              <div class="form-note-s2 pt-4">
-                Already have an account ?
-                <a href="{% url 'coinpass:login' %}"
-                  ><strong>Sign in instead</strong></a
-                >
-              </div>
-              <div class="text-center pt-4 pb-3">
-                <h6 class="overline-title overline-title-sap">
-                  <span>OR</span>
-                </h6>
-              </div>
-              <ul class="nav justify-center gx-8">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Facebook</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Google</a>
-                </li>
-              </ul>
               </div>
             </div>
             <div class="nk-block nk-auth-footer">

@@ -291,7 +291,9 @@
                                   class="align-center flex-wrap flex-sm-nowrap gx-3 gy-2"
                                 >
                                   <li class="order-md-last">
-                                    <a href="#profile-edit" class="btn btn-primary"
+                                    <a
+                                      href="#profile-edit"
+                                      class="btn btn-primary"
                                       >Change Password</a
                                     >
                                   </li>
@@ -653,7 +655,9 @@
         <h5 class="title">Update Profile</h5>
         <ul class="nk-nav nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#personale">Personal</a>
+            <a class="nav-link active" data-toggle="tab" href="#personale"
+              >Personal</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#security">Security</a>
@@ -661,120 +665,119 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="personale">
-            <div class="row gy-4">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="form-label" for="full-name">Full Name</label
-                  ><input
-                    type="text"
-                    class="form-control form-control-lg"
-                    id="full-name"
-                    value="{{ user.name }}"
-                    placeholder="Enter Full name"
-                  />
+            <form action="#" method="post">
+
+              {% csrf_token %}
+
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label
+                      class="form-label"
+                      for="{{ user_settings.name.id_for_label }}"
+                      >Full Name</label
+                    >
+
+                    {{ user_settings.name }}
+                  </div>
                 </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label class="form-label" for="default-06"
-                    >Upload Profile pic</label
-                  >
-                  <div class="form-control-wrap">
-                    <div class="custom-file">
-                      <input
-                        type="file"
-                        multiple=""
-                        class="custom-file-input"
-                        id="customFile"
-                      /><label class="custom-file-label" for="customFile"
-                        >Choose file</label
-                      >
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label
+                      class="form-label"
+                      for="{{ user_settings.image.id_for_label }}"
+                      >Upload Profile pic</label
+                    >
+                    <div class="form-control-wrap">
+                      <div class="custom-file">
+                        {{ user_settings.image }}
+
+                        <label class="custom-file-label" for="customFile"
+                          >Choose file</label
+                        >
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="form-label" for="display-name"
-                    >Display Name</label
-                  ><input
-                    type="text"
-                    class="form-control form-control-lg"
-                    id="display-name"
-                    value="{{ user.name }}"
-                    placeholder="Enter display name"
-                  />
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label
+                      class="form-label"
+                      for="{{ user_settings.name.id_for_label }}"
+                      >Display Name</label
+                    >
+
+                    {{ user_settings.name }}
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label
+                      class="form-label"
+                      for="{{ user_settings.phone.id_for_label }}"
+                      >Phone Number</label
+                    >
+
+                    {{ user_settings.phone }}
+                  </div>
+                </div>
+                <div class="col-12">
+                  <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
+                    <li>
+                      <a href="#" class="btn btn-lg btn-primary">
+                        Update Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" data-dismiss="modal" class="link link-light"
+                        >Cancel</a
+                      >
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="form-label" for="phone-no">Phone Number</label
-                  ><input
-                    type="text"
-                    class="form-control form-control-lg"
-                    id="phone-no"
-                    value="{{ user.phone }}"
-                    placeholder="Phone Number"
-                  />
-                </div>
-              </div>
-              <div class="col-12">
-                <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
-                  <li>
-                    <a href="#" class="btn btn-lg btn-primary"
-                      >Update Profile</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" data-dismiss="modal" class="link link-light"
-                      >Cancel</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
+            </form>
           </div>
           <div class="tab-pane" id="security">
-            <div class="row gy-4">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="form-label" for="address-l1"
-                    >Current Password</label
-                  ><input
-                    type="password"
-                    class="form-control form-control-lg"
-                    id="address-l1"
-                    placeholder="current password"
-                  />
+            <form action="#" method="post">
+              
+              {% csrf_token %}
+
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label" for="address-l1"
+                      >Current Password</label
+                    >
+
+                    {{ user_account_settings.password }}
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label" for="address-l2"
+                      >New Password</label
+                    >
+
+                    {{ user_account_settings.password }}
+                  </div>
+                </div>
+                <div class="col-12">
+                  <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
+                    <li>
+                      <a href="#" class="btn btn-lg btn-primary"
+                        >Update Security</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" data-dismiss="modal" class="link link-light"
+                        >Cancel</a
+                      >
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="form-label" for="address-l2"
-                    >New Password</label
-                  ><input
-                    type="password"
-                    class="form-control form-control-lg"
-                    id="address-l2"
-                    placeholder="new password"
-                  />
-                </div>
-              </div>
-              <div class="col-12">
-                <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
-                  <li>
-                    <a href="#" class="btn btn-lg btn-primary"
-                      >Update Security</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" data-dismiss="modal" class="link link-light"
-                      >Cancel</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
