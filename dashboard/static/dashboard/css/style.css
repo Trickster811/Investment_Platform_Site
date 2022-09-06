@@ -1,0 +1,119 @@
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.progClock {
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	position: relative;
+	text-align: center;
+	width: 16em;
+	height: 16em;
+}
+.progClock__time-date,
+.progClock__time-digit,
+.progClock__time-colon,
+.progClock__time-ampm {
+	transition: color 0.2s linear;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+.progClock__time-date,
+.progClock__time-digit {
+	background: transparent;
+}
+.progClock__time-date,
+.progClock__time-ampm {
+	grid-column: 1 / 6;
+}
+.progClock__time-date {
+	font-size: 0.75em;
+	line-height: 1.33;
+}
+.progClock__time-digit,
+.progClock__time-colon {
+	font-size: 2em;
+	font-weight: 400;
+	grid-row: 2;
+}
+.progClock__time-colon {
+	line-height: 1.275;
+}
+.progClock__time-ampm {
+	cursor: default;
+	grid-row: 3;
+}
+.progClock__rings {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+.progClock__ring {
+	opacity: 0.1;
+}
+.progClock__ring-fill {
+	transition:
+		opacity 0s 0.3s linear,
+		stroke-dashoffset 0.3s ease-in-out;
+}
+.progClock__ring-fill--360 {
+	opacity: 0;
+	stroke-dashoffset: 0;
+	transition-duration: 0.3s;
+}
+[data-group]:focus {
+	outline: transparent;
+}
+[data-units] {
+	transition: opacity 0.2s linear;
+}
+[data-group="d"]:focus,
+[data-group="d"]:hover {
+	color: rgb(253,41,20);
+}
+[data-group="h"]:focus,
+[data-group="h"]:hover {
+	color: rgb(51,53,65);
+}
+[data-group="m"]:focus,
+[data-group="m"]:hover {
+	color: rgb(92,184,92);
+}
+[data-group="s"]:focus,
+[data-group="s"]:hover {
+	color: rgb(249,187,4);
+}
+[data-group]:focus ~ .progClock__rings [data-units],
+[data-group]:hover ~ .progClock__rings [data-units] {
+	opacity: 0.2;
+}
+[data-group="d"]:focus ~ .progClock__rings [data-units="d"],
+[data-group="d"]:hover ~ .progClock__rings [data-units="d"],
+[data-group="h"]:focus ~ .progClock__rings [data-units="h"],
+[data-group="h"]:hover ~ .progClock__rings [data-units="h"],
+[data-group="m"]:focus ~ .progClock__rings [data-units="m"],
+[data-group="m"]:hover ~ .progClock__rings [data-units="m"],
+[data-group="s"]:focus ~ .progClock__rings [data-units="s"],
+[data-group="s"]:hover ~ .progClock__rings [data-units="s"] {
+	opacity: 1;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue),10%,10%);
+		--fg: hsl(var(--hue),10%,90%);
+	}
+	.progClock__ring {
+		opacity: 0.2;
+	}
+}

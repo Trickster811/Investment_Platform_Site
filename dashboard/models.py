@@ -39,6 +39,7 @@ class deposit(models.Model):
     dateDep = models.DateTimeField('Date', auto_now_add=True, null=False)
     payerDep = models.CharField('Owner', max_length=100, null=False)
     statusDep = models.BooleanField('Status', default=False, null=False)
+    checkedDep = models.BooleanField('Checked', default=False, null=False)
     accountDep = models.ForeignKey(account, on_delete=models.CASCADE) 
 
     class Meta:
@@ -50,6 +51,7 @@ class withdrawal(models.Model):
     dateWth = models.DateTimeField('Date', auto_now_add=True, null=False)
     receiverWth = models.CharField('Receiver Accont', max_length=100, null=False)
     statusWth = models.BooleanField('Status', default=False, null=False)
+    checkedWth = models.BooleanField('Checked', default=False, null=False)
     accountWth = models.ForeignKey(account, on_delete=models.CASCADE, null=False)
 
     class Meta:
@@ -75,4 +77,16 @@ class plan(models.Model):
     class Meta:
         verbose_name = 'Invest'
         verbose_name_plural = 'Invests'
+
+class currentInvestment(models.Model):
+    amountInvested = models.DecimalField('Amount Invested', max_digits=15, decimal_places=10, null=False)
+    dateStart = models.DateTimeField('Started on', auto_now_add=True, null=False)
+    dateEnd = models.DateTimeField('Ending on', auto_now_add=True, null=False)
+    status = models.BooleanField('Status', default=False, null=False)   
+    relatedAccount = models.ForeignKey(account,on_delete=models.CASCADE, null=False) 
+    type_plan = models.ForeignKey(type_plan, on_delete=models.CASCADE, null=False)
+
+    class Meta:
+        verbose_name = 'Current Invest'
+        verbose_name_plural = 'Current Invests'
 

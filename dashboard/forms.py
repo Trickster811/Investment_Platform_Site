@@ -1,9 +1,19 @@
-from django.forms import CheckboxInput, FileInput, ModelForm, TextInput, NumberInput, BooleanField, EmailInput, PasswordInput
+from pyexpat import model
+from django.forms import FileInput, ModelForm, TextInput, NumberInput, PasswordInput, Select
 from .models import *
 
 # Create your forms here
 
-class deposits(ModelForm):
+class invest_form(ModelForm):
+    class Meta:
+        model = currentInvestment
+        fields = ['amountInvested', 'type_plan']
+        widgets={
+            'amountInvested' : NumberInput(attrs={'class' : 'form-control', 'placeholder' : 'Amount to invest', 'required' : ''}),
+            'type_plan' : TextInput(attrs={'class' : 'form-control', 'placeholder' : 'Enter the payer address', 'required' : ''})
+        }
+
+class deposit_form(ModelForm):
     class Meta:
         model = deposit
         fields = ['amountDep', 'payerDep']
@@ -12,7 +22,7 @@ class deposits(ModelForm):
             'payerDep' : TextInput(attrs={'class' : 'form-control', 'placeholder' : 'Enter the payer address', 'required' : ''})
         }
 
-class withdrawals(ModelForm):
+class withdrawal_form(ModelForm):
     class Meta:
         model = withdrawal
         fields = ['amountWth', 'receiverWth']

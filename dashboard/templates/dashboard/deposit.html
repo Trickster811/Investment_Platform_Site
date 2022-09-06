@@ -7,18 +7,19 @@
         <div class="nk-block-head nk-block-head-sm">
           <div class="nk-block-between">
             <div class="nk-block-head-content">
-              <h4 class="nk-block-title page-title">Invest</h4>
+              <h4 class="nk-block-title page-title">Deposit</h4>
             </div>
           </div>
         </div>
         <div class="nk-block">
           <div class="row g-gs">
+            
             <div class="col-xxl-8">
               <div class="card card-full">
                 <div class="card-inner">
                   <div class="card-title-group">
                     <div class="card-title">
-                      <h6 class="title">Invest from your account</h6>
+                      <h6 class="title">Let's make your deposit</h6>
                     </div>
                   </div>
                 </div>
@@ -28,52 +29,8 @@
                     {% csrf_token %}
 
                     <div class="row g-gs">
-                      <div class="col-xxl-6">
-                        <div class="card is-dark h-100">
-                          <div class="nk-ecwg nk-ecwg1">
-                            <div class="card-inner">
-                              <div class="card-title-group">
-                                <div class="card-title">
-                                  <h6 class="title">Amount Account</h6>
-                                </div>
-                                <div class="card-tools">
-                                  <a href="#" class="link">View Report</a>
-                                </div>
-                              </div>
-                              <div class="data">
-                                <div class="amount">
-                                  ${{ account.amount }}
-                                </div>
-                                <div class="info">
-                                  <strong>$7,395.37</strong> in last month
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xxl-6 col-md-6">
-                        <label class="form-label">Choose a plan</label>
-                        <div class="form-control-wrap">
-                          <div class="form-control-select">
-                            <select class="form-control" id="default-06" aria-placeholder="Choose a plan">
-                              <!-- <option value="default_option">
-                                Choose
-                              </option> -->
-                              <option value="option_select_name">
-                                Bronze Plan ($50 - $499)
-                              </option>
-                              <option value="option_select_name">
-                                Silver Plan ($500 - $9999)
-                              </option>
-                              <option value="option_select_name">
-                                Gold Plan ($10.000 - ~)
-                              </option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xxl-6 col-md-6">
+                      
+                      <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                           <label class="form-label" for="{{ invest.amountDep.id_for_label }}"
                             >Amount</label
@@ -83,7 +40,7 @@
                               <span class="overline-title">Usd</span>
                             </div>
 
-                            {{ invest.amountInvested }}
+                            {{ deposit.amountDep }}
                             <!-- <input
                               type="text"
                               class="form-control"
@@ -91,14 +48,57 @@
                               placeholder="amount to invest"
                               required=""
                             /> -->
-
                           </div>
                         </div>
                       </div>
+                      <div class="col-lg-6 col-md-6">
+                        <div class="form-group">
+                          <label class="form-label" for="{{ invest.payerDep.id_for_label }}"
+                            >Payment Methods</label
+                          >
+                          <div class="form-control-wrap">
+                            <div class="input-group">
+                              <div class="input-group-append">
+                                <select
+                                  type="select"
+                                  id="exampleCustomSelect"
+                                  name="customSelect"
+                                  class="custom-select"
+                                  style="background: #bdbdbd "
+                                >
+                                  <option value="">Select</option>
+                                  <option>Bitcoin</option>
+                                  <option>Perfect Money</option>
+                                </select>
+                              </div>
+                              <input
+                                placeholder="your wallet here"
+                                type="text"
+                                class="form-control"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Displaying messages -->
+
+                      {% if messages %}
+                      <ul class="messages">
+                          {% for message in messages %}
+                            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                              {{ message }}
+                            </li>
+                          {% endfor %}
+                      </ul>
+                      {% endif %}
+
+                      <!-- Displaying messages -->
+                      
                       <div class="col-12">
                         <div class="form-group">
                           <button type="submit" class="btn btn-primary">
-                            Invest
+                            Deposit
                           </button>
                         </div>
                       </div>
@@ -107,13 +107,12 @@
                 </div>
               </div>
             </div>
-            
             <div class="col-xxl-8">
               <div class="card card-full">
                 <div class="card-inner">
                   <div class="card-title-group">
                     <div class="card-title">
-                      <h6 class="title">Recent Invests</h6>
+                      <h6 class="title">Recent Deposits</h6>
                     </div>
                   </div>
                 </div>

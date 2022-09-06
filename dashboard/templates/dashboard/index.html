@@ -57,65 +57,211 @@
               </div>
             </div>
             <div class="col-xxl-4">
-              <div class="row g-gs">
-                <div class="col-xxl-12 col-md-6">
-                  <div class="card">
-                    <div class="nk-ecwg nk-ecwg3">
-                      <div class="card-inner pb-0">
-                        <div class="card-title-group">
-                          <div class="card-title">
-                            <h6 class="title">Orders</h6>
-                          </div>
-                        </div>
-                        <div class="data">
-                          <div class="data-group">
-                            <div class="amount">329</div>
-                            <div class="info text-right">
-                              <span class="change up text-danger"
-                                ><em class="icon ni ni-arrow-long-up"></em
-                                >4.63%</span
-                              ><br /><span>vs. last week</span>
-                            </div>
-                          </div>
-                        </div>
+              <div class="">
+                <div class="nk-ecwg nk-ecwg3">
+                  <div class="card-inner pb-0">
+                    <div class="card-title-group">
+                      <div class="card-title">
+                        <h6 class="title">Investment</h6>
                       </div>
-                      <div class="nk-ecwg3-ck">
-                        <canvas
-                          class="ecommerce-line-chart-s1"
-                          id="totalOrders"
-                        ></canvas>
+                    </div>
+
+                    <!-- Displaying progress bar wether there is an investment going on -->
+
+                    <!-- {% if invest %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                          <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                            {{ message }}
+                          </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %} -->
+
+                    <!-- Displaying progress bar wether there is an investment going on -->
+
+                    <div class="data">
+                      <div class="data-group">
+                        <div class="amount">{{ currentInvest.type_plan }}</div>
+                        <div id="clock" class="progClock ">
+                          <button class="progClock__time-date" data-group="d" type="button">
+                            <small data-unit="w">Sunday</small><br />
+                            <span data-unit="mo">January</span>
+                            <span data-unit="d">1</span>
+                          </button>
+                          <button
+                            class="progClock__time-digit"
+                            data-unit="h"
+                            data-group="h"
+                            type="button"
+                          >
+                            12</button
+                          ><span class="progClock__time-colon">:</span
+                          ><button
+                            class="progClock__time-digit"
+                            data-unit="m"
+                            data-group="m"
+                            type="button"
+                          >
+                            00</button
+                          ><span class="progClock__time-colon">:</span
+                          ><button
+                            class="progClock__time-digit"
+                            data-unit="s"
+                            data-group="s"
+                            type="button"
+                          >
+                            00
+                          </button>
+                          <span class="progClock__time-ampm" data-unit="ap">AM</span>
+                          <svg
+                            class="progClock__rings"
+                            width="256"
+                            height="256"
+                            viewBox="0 0 256 256"
+                          >
+                            <defs>
+                              <linearGradient id="clock-red" x1="1" y1="0.5" x2="0" y2="0.5">
+                                <stop offset="0%" stop-color="rgb(253,41,20)" />
+                                <stop offset="100%" stop-color="rgb(253,41,20)" />
+                              </linearGradient>
+                              <linearGradient id="clock-yellow" x1="1" y1="0.5" x2="0" y2="0.5">
+                                <stop offset="0%" stop-color="rgb(51,53,65)" />
+                                <stop offset="100%" stop-color="rgb(51,53,65)" />
+                              </linearGradient>
+                              <linearGradient id="clock-blue" x1="1" y1="0.5" x2="0" y2="0.5">
+                                <stop offset="0%" stop-color="rgb(92,184,92)" />
+                                <stop offset="100%" stop-color="rgb(92,184,92)" />
+                              </linearGradient>
+                              <linearGradient id="clock-purple" x1="1" y1="0.5" x2="0" y2="0.5">
+                                <stop offset="0%" stop-color="rgb(249,187,4)" />
+                                <stop offset="100%" stop-color="rgb(249,187,4)" />
+                              </linearGradient>
+                            </defs>
+                            <!-- Days -->
+                            <g data-units="d">
+                              <circle
+                                class="progClock__ring"
+                                cx="128"
+                                cy="128"
+                                r="74"
+                                fill="none"
+                                opacity="0.1"
+                                stroke="url(#clock-red)"
+                                stroke-width="12"
+                              />
+                              <circle
+                                class="progClock__ring-fill"
+                                data-ring="mo"
+                                cx="128"
+                                cy="128"
+                                r="74"
+                                fill="none"
+                                stroke="url(#clock-red)"
+                                stroke-width="12"
+                                stroke-dasharray="465 465"
+                                stroke-dashoffset="465"
+                                stroke-linecap="round"
+                                transform="rotate(-90,128,128)"
+                              />
+                            </g>
+                            <!-- Hours -->
+                            <g data-units="h">
+                              <circle
+                                class="progClock__ring"
+                                cx="128"
+                                cy="128"
+                                r="90"
+                                fill="none"
+                                opacity="0.1"
+                                stroke="url(#clock-yellow)"
+                                stroke-width="12"
+                              />
+                              <circle
+                                class="progClock__ring-fill"
+                                data-ring="d"
+                                cx="128"
+                                cy="128"
+                                r="90"
+                                fill="none"
+                                stroke="url(#clock-yellow)"
+                                stroke-width="12"
+                                stroke-dasharray="565.5 565.5"
+                                stroke-dashoffset="565.5"
+                                stroke-linecap="round"
+                                transform="rotate(-90,128,128)"
+                              />
+                            </g>
+                            <!-- Minutes -->
+                            <g data-units="m">
+                              <circle
+                                class="progClock__ring"
+                                cx="128"
+                                cy="128"
+                                r="106"
+                                fill="none"
+                                opacity="0.1"
+                                stroke="url(#clock-blue)"
+                                stroke-width="12"
+                              />
+                              <circle
+                                class="progClock__ring-fill"
+                                data-ring="h"
+                                cx="128"
+                                cy="128"
+                                r="106"
+                                fill="none"
+                                stroke="url(#clock-blue)"
+                                stroke-width="12"
+                                stroke-dasharray="666 666"
+                                stroke-dashoffset="666"
+                                stroke-linecap="round"
+                                transform="rotate(-90,128,128)"
+                              />
+                            </g>
+                            <!-- Seconds -->
+                            <g data-units="s">
+                              <circle
+                                class="progClock__ring"
+                                cx="128"
+                                cy="128"
+                                r="122"
+                                fill="none"
+                                opacity="0.1"
+                                stroke="url(#clock-purple)"
+                                stroke-width="12"
+                              />
+                              <circle
+                                class="progClock__ring-fill"
+                                data-ring="m"
+                                cx="128"
+                                cy="128"
+                                r="122"
+                                fill="none"
+                                stroke="url(#clock-purple)"
+                                stroke-width="12"
+                                stroke-dasharray="766.5 766.5"
+                                stroke-dashoffset="766.5"
+                                stroke-linecap="round"
+                                transform="rotate(-90,128,128)"
+                              />
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="info text-right">
+                          <span class="change up text-danger"
+                            ><em class="icon ni ni-arrow-long-up"></em
+                            >4.63%</span
+                          ><br /><span>vs. last week</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-xxl-12 col-md-6">
-                  <div class="card">
-                    <div class="nk-ecwg nk-ecwg3">
-                      <div class="card-inner pb-0">
-                        <div class="card-title-group">
-                          <div class="card-title">
-                            <h6 class="title">Customers</h6>
-                          </div>
-                        </div>
-                        <div class="data">
-                          <div class="data-group">
-                            <div class="amount">194</div>
-                            <div class="info text-right">
-                              <span class="change up text-danger"
-                                ><em class="icon ni ni-arrow-long-up"></em
-                                >4.63%</span
-                              ><br /><span>vs. last week</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="nk-ecwg3-ck">
-                        <canvas
-                          class="ecommerce-line-chart-s1"
-                          id="totalCustomers"
-                        ></canvas>
-                      </div>
-                    </div>
+                  <div class="nk-ecwg3-ck">
+                    <canvas
+                      class="ecommerce-line-chart-s1"
+                      id="totalOrders"
+                    ></canvas>
                   </div>
                 </div>
               </div>
@@ -326,8 +472,7 @@
                     </div>
                   </div>
 
-                  {% if invests %} 
-                  {% for invest in invests %}
+                  {% if invests %} {% for invest in invests %}
 
                   <div class="nk-tb-item">
                     <div class="nk-tb-col">
@@ -367,8 +512,7 @@
                     </div>
                   </div>
 
-                  {% endfor %} 
-                  {% endif %}
+                  {% endfor %} {% endif %}
 
                   <div class="nk-tb-item">
                     <div class="nk-tb-col">
@@ -491,4 +635,5 @@
     </div>
   </div>
 </div>
+<script src="{% static 'dashboard/js/function.js' %}"></script>
 {% endblock %}
