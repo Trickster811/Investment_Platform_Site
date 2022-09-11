@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,9 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-i!*n+z!-i_rn1)07l^47y!lw1y2-b==b14&svq6!$f*918hs)0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if os.environ.get('ENV') == 'PRODUCTION':
+    DEBUG = False
+else:
+    DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['coinpass-investment.com']
 
 
 # Application definition
@@ -53,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'coinpass_investment_platform.urls'
@@ -89,6 +94,17 @@ DATABASES = {
         'PORT': '5432'
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'coinpass',
+#         'USER': 'macnight',
+#         'PASSWORD': 'leslie02',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
+#     }
+# }
 
 
 # Password validation
@@ -141,6 +157,18 @@ SERVER_EMAIL = 'nedaoukajoachim@gmail.com'
 EMAIL_HOST_PASSWORD = "zzzkgxorpbokiznk"
 
 INTERNAL_IPS = ['127.0.0.1']
+
+if os.environ.get('ENV') == 'PRODUCTION':
+    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+    STATICFILES_DIRS = (
+        os.path.join(PROJECT_ROOT, 'static'),
+    )
+
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage '
+
+    db_form_env = dj_database_url.config(conn_max_age=500)
+    DATABASES["default"].update(db_form_env)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -284,3 +312,5 @@ JAZZMIN_SETTINGS = {
     # Add a language dropdown into the admin
     "language_chooser": True,
 }
+
+# '~P2\x0c\x0b:5qAcr~d@dO{C r`5,-'

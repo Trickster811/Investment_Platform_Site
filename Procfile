@@ -1,0 +1,1 @@
+web: gunicorn coinpass_investment_platform.wsgi
