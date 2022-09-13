@@ -14,7 +14,6 @@ heroku==0.1.4
 heroku3==5.1.4
 idna==3.3
 importlib-metadata==4.12.0
-keyring==17.1.1
 onboard==1.4.1
 pexpect==4.6.0
 Pillow==5.4.1
